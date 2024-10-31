@@ -5,6 +5,7 @@ import { App, ConfigProvider, ConfigProviderProps } from 'antd';
 import enUS from 'antd/locale/en_US';
 import zhCN from 'antd/locale/zh_CN';
 import zh_HK from 'antd/locale/zh_HK';
+import itIT from 'antd/locale/it_IT';
 import dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
@@ -26,6 +27,7 @@ const AntLanguageMap = {
   en: enUS,
   zh: zhCN,
   'zh-TRADITIONAL': zh_HK,
+  it: itIT,
 };
 
 const queryClient = new QueryClient();

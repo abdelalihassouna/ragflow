@@ -89,7 +89,7 @@ if not LIGHTEN:
             "asr_model": "",
         },
         "Ollama": {
-            "chat_model": "qwen-14B-chat",
+            "chat_model": "llama3.2",
             "embedding_model": "flag-embedding",
             "image2text_model": "",
             "asr_model": "",

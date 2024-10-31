@@ -77,6 +77,7 @@ const AssistantSetting = ({ show, form }: ISegmentedContentProps) => {
           options={[
             { value: 'Chinese', label: t('chinese', { keyPrefix: 'common' }) },
             { value: 'English', label: t('english', { keyPrefix: 'common' }) },
+            { value: 'Italian', label: t('italian', { keyPrefix: 'common' }) },
           ]}
         />
       </Form.Item>
