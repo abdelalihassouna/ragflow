@@ -1,3 +1,8 @@
+import {
+  AutoKeywordsItem,
+  AutoQuestionsItem,
+} from '@/components/auto-keywords-item';
+import { useShowAutoKeywords } from '@/components/chunk-method-modal/hooks';
 import Delimiter from '@/components/delimiter';
 import EntityTypesItem from '@/components/entity-types-item';
 import ExcelToHtml from '@/components/excel-to-html';
@@ -27,6 +32,7 @@ const ConfigurationForm = ({ form }: { form: FormInstance }) => {
     useFetchKnowledgeConfigurationOnMount(form);
   const { t } = useTranslate('knowledgeConfiguration');
   const handleChunkMethodSelectChange = useHandleChunkMethodSelectChange(form);
+  const showAutoKeywords = useShowAutoKeywords();
 
   return (
     <Form form={form} name="validateOnly" layout="vertical" autoComplete="off">
@@ -121,6 +127,12 @@ const ConfigurationForm = ({ form }: { form: FormInstance }) => {
                   <Delimiter></Delimiter>
                 </>
               )}
+              {showAutoKeywords(parserId) && (
+                <>
+                  <AutoKeywordsItem></AutoKeywordsItem>
+                  <AutoQuestionsItem></AutoQuestionsItem>
+                </>
+              )}
               {parserId === 'naive' && (
                 <>
                   <MaxTokenNumber></MaxTokenNumber>
@@ -129,6 +141,7 @@ const ConfigurationForm = ({ form }: { form: FormInstance }) => {
                   <ExcelToHtml></ExcelToHtml>
                 </>
               )}
+
               {showRaptorParseConfiguration(parserId) && (
                 <ParseConfiguration></ParseConfiguration>
               )}
